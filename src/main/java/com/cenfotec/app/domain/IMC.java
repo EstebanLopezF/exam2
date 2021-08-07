@@ -1,6 +1,8 @@
 package com.cenfotec.app.domain;
 
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +20,7 @@ public class IMC {
 
     private long idAtleta;
     private double indice;
-    private Date fechaToma;
+    private LocalDate fechaToma;
     
     public IMC(){
     }
@@ -52,11 +54,11 @@ public class IMC {
         this.indice = indice;
     }
     
-    public Date getFechaToma() {
+    public LocalDate getFechaToma() {
         return fechaToma;
     }
 
-    public void setFechaToma(Date fechaToma) {
+    public void setFechaToma(LocalDate fechaToma) {
         this.fechaToma = fechaToma;
     }
     

@@ -22,6 +22,7 @@ public class AtletaController {
     @Autowired
     AtletaService atletaService;
     
+    @Autowired
     ImcService imcService;
        
     @RequestMapping("/")
@@ -50,6 +51,8 @@ public class AtletaController {
     @RequestMapping(value = "/insertar",  method = RequestMethod.POST)
     public String save(Atleta atleta, BindingResult result, Model model) {
     	atletaService.save(atleta);
+    	//IMC imc = IMC(atleta.getId(),atleta.getPeso(),atleta.getEstatura()); 
+    	//IMC aa = new IMC(atleta.getId(),atleta.getPeso(),atleta.getEstatura());
     	imcService.saveProcedure(new IMC(atleta.getId(),atleta.getPeso(),atleta.getEstatura()));
     	
         return "index";
@@ -68,7 +71,9 @@ public class AtletaController {
     
     
     
-    @GetMapping("/search/{name}")
+
+
+	@GetMapping("/search/{name}")
     public ResponseEntity<List<Atleta>> getList(@PathVariable("name") String name){
         List<Atleta> atletas = atletaService.getSearch(name);
         return new ResponseEntity(atletas, HttpStatus.OK);
