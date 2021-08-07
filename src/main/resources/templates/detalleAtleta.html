@@ -12,31 +12,31 @@
 		<h1>Detalle de Atleta</h1>
 
 		<p><label for="id">Cédula</label>
-   		<input value="${atleta.getId()}" type="text" th:field="*{id}" id="id" disabled></p>
+   		<input value="${atleta.getId()}" type="text" th:field="*{id}" id="id" readonly></p>
 
  		<p><label for="name">Nombre</label>
-    	<input value="${atleta.getNombre()}" type="text" th:field="*{nombre}" id="name" disabled></p>
+    	<input value="${atleta.getNombre()}" type="text" th:field="*{nombre}" id="name" readonly></p>
     
     	<p><label for="apellidos1">Apellido1</label>
-    	<input value="${atleta.getApellidos1()}" type="text" th:field="*{apellidos1}" id="apellidos1" disabled></p>
+    	<input value="${atleta.getApellidos1()}" type="text" th:field="*{apellidos1}" id="apellidos1" readonly></p>
     
     	<p><label for="apellidos2">Apellido2</label>
-    	<input value="${atleta.getApellidos2()}" type="text" th:field="*{apellidos2}" id="apellidos2" disabled></p>
+    	<input value="${atleta.getApellidos2()}" type="text" th:field="*{apellidos2}" id="apellidos2" readonly></p>
     
     	<p><label for="fechaNacimiento">Fecha de Nacimiento</label>
-    	<input value="${atleta.getFechaNacimiento()}" type="text" th:field="*{fechaNacimiento}" id="fechaNacimiento" disabled></p>
+    	<input value="${atleta.getFechaNacimiento()}" type="text" th:field="*{fechaNacimiento}" id="fechaNacimiento" readonly></p>
     	
     	<p><label for="deporte">Deporte</label>
-    	<input value="${atleta.getDeporte()}" type="text" th:field="*{deporte}" id="deporte" disabled></p>
+    	<input value="${atleta.getDeporte()}" type="text" th:field="*{deporte}" id="deporte" readonly></p>
     
     	<p><label for="estatura">Estatura</label>
-    	<input value="${atleta.getEstatura()}" type="text" th:field="*{estatura}" id="estatura" disabled></p>
+    	<input value="${atleta.getEstatura()}" type="text" th:field="*{estatura}" id="estatura" readonly></p>
     
    		<p><label for="Peso">Peso</label>
     	<input value="${atleta.getPeso()}" type="text" th:field="*{Peso}" id="Peso"></p>
     
 		<p><label for="sexo">Sexo</label>
-    	<input value="${atleta.getSexo()}" type="text" th:field="*{sexo}" id="sexo" disabled></p>
+    	<input value="${atleta.getSexo()}" type="text" th:field="*{sexo}" id="sexo" readonly></p>
 
 		<p><label for="provincia">Provincia</label>
     	<input value=${atleta.getProvincia()} type="text" th:field="*{provincia}" id="provincia"></p>

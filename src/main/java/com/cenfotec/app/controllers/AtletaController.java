@@ -56,17 +56,27 @@ public class AtletaController {
     	return "listar";
     }
     
-    
-    
-    
-    @RequestMapping(value = "/update",  method = RequestMethod.GET)
-    public String updatePage(Model model) {
+    /*
+    @RequestMapping(value = "/update/{id}",  method = RequestMethod.GET)
+    public String updatePage(Model model, @PathVariable String id) {
         model.addAttribute(new Atleta());
         return "detalleAtleta";
     }
     
-    @RequestMapping( value="/update", method = RequestMethod.PUT)
+    @RequestMapping( value="/update/{id}", method = RequestMethod.PUT)
+    public String update(Atleta atleta, BindingResult result, Model model, @PathVariable String id) {
+    	atletaService.updateProcedure(atleta);
+    	return "listar";
+    }*/
+    
+    @RequestMapping(value = "/update",  method = RequestMethod.GET)
     public String update(Atleta atleta, BindingResult result, Model model) {
+    	atletaService.updateProcedure(atleta);
+    	return "listar";
+    }
+    
+    @RequestMapping( value="/update/{id}", method = RequestMethod.PUT)
+    public String update(Atleta atleta, BindingResult result, Model model, @PathVariable String id) {
     	atletaService.updateProcedure(atleta);
     	return "listar";
     }
