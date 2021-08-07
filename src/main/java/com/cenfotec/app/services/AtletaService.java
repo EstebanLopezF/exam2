@@ -1,10 +1,7 @@
 package com.cenfotec.app.services;
 
 import com.cenfotec.app.domain.Atleta;
-
-import java.sql.Date;
 import java.util.List;
-import java.util.Optional;
 
 public interface AtletaService {
 

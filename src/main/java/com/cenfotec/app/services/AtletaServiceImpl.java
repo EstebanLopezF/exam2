@@ -2,12 +2,9 @@ package com.cenfotec.app.services;
 
 import com.cenfotec.app.domain.Atleta;
 import com.cenfotec.app.repo.AtletaRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AtletaServiceImpl implements AtletaService {

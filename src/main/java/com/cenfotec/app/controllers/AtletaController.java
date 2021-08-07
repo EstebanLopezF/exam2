@@ -4,7 +4,6 @@ import com.cenfotec.app.domain.Atleta;
 import com.cenfotec.app.domain.IMC;
 import com.cenfotec.app.services.AtletaService;
 import com.cenfotec.app.services.ImcService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +13,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class AtletaController {
@@ -51,27 +49,10 @@ public class AtletaController {
     @RequestMapping(value = "/insertar",  method = RequestMethod.POST)
     public String save(Atleta atleta, BindingResult result, Model model) {
     	atletaService.save(atleta);
-    	//IMC imc = IMC(atleta.getId(),atleta.getPeso(),atleta.getEstatura()); 
-    	//IMC aa = new IMC(atleta.getId(),atleta.getPeso(),atleta.getEstatura());
     	imcService.saveProcedure(new IMC(atleta.getId(),atleta.getPeso(),atleta.getEstatura()));
-    	
         return "index";
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 
 	@GetMapping("/search/{name}")
     public ResponseEntity<List<Atleta>> getList(@PathVariable("name") String name){
@@ -79,6 +60,9 @@ public class AtletaController {
         return new ResponseEntity(atletas, HttpStatus.OK);
     }
     
+	
+	
+	
     @PutMapping("/update")
     public ResponseEntity<?> update(@RequestBody Atleta atleta){
     	atletaService.updateProcedure(atleta);
