@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de atleta</title>
+</head>
+<body>
+	<div>
+		<h1>Detalle de Atleta</h1>
+		<p><label >Cédula: </label>
+		<span th:text="${atleta.getId()}">id</span></p>
+		<p><label >Nombre: </label>
+		<span th:text="${atleta.getNombre()}">nombre</span></p>
+		<p><label >Apellido1: </label>
+		<span th:text="${atleta.getApellidos1()}">apellidos1</span></p>
+		<p><label >Apellido2: </label>
+		<span th:text="${atleta.getApellidos2()}">apellidos2</span></p>
+		<p><label >Fecha de Nacimiento: </label>
+		<span th:text="${atleta.getFechaNacimiento()}">fechaNacimiento</span></p>
+		<p><label >Deporte: </label>
+		<span th:text="${atleta.getDeporte()}">deporte</span></p>
+		<p><label >Estatura: </label>
+		<span th:text="${atleta.getEstatura()}">estatura</span></p>
+		<p><label >Peso: </label>
+		<span th:text="${atleta.getPeso()}">peso</span></p>
+		<p><label >Sexo: </label>
+		<span th:text="${atleta.getSexo()}">sexo</span></p>
+		<p><label >Provincia: </label>
+		<span th:text="${atleta.getProvincia()}">provincia</span></p>
+		<p><label >Canton: </label>
+		<span th:text="${atleta.getCanton()}">canton</span></p>
+		<p><label >Distrito: </label>
+		<span th:text="${atleta.getDistrito()}">distrito</span></p>
+		<p><label >Teléfono: </label>
+		<span th:text="${atleta.getTelefono()}">telefono</span></p>
+		<p><label >Correo: </label>
+		<span th:text="${atleta.getCorreo()}">correo</span></p>
+		
+	</div>
+	
+		<a th:href="@{/imcHistorial/{id}(id= ${atleta.getId()})}">Ver Historial IMC</a>
+		<a th:href="@{/}">Volver al Inicio</a>
+		
+	
+</body>
+</html>

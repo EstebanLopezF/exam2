@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Crear Perfil de Atleta</title>
+</head>
+<body>
+<h1>Crear Perfil de Atleta</h1>
+<form action="#" th:action="@{/insertar}" th:object="${atleta}" method="post">
+
+    <p><label for="id">Cédula</label>
+    <input type="text" th:field="*{id}" id="id"></p>
+
+    <p><label for="name">Nombre</label>
+    <input type="text" th:field="*{nombre}" id="name"></p>
+    
+    <p><label for="apellidos1">Apellido1</label>
+    <input type="text" th:field="*{apellidos1}" id="apellidos1"></p>
+    
+    <p><label for="apellidos2">Apellido2</label>
+    <input type="text" th:field="*{apellidos2}" id="apellidos2"></p>
+    
+    <p><label for="fechaNacimiento">Fecha de Nacimiento</label>
+    <input type="text" th:field="*{fechaNacimiento}" id="fechaNacimiento"></p>
+    
+    <p><label for="deporte">Deporte</label>
+    <input type="text" th:field="*{deporte}" id="deporte"></p>
+    
+    <p><label for="estatura">Estatura</label>
+    <input type="text" th:field="*{estatura}" id="estatura"></p>
+    
+    <p><label for="Peso">Peso</label>
+    <input type="text" th:field="*{Peso}" id="Peso"></p>
+    
+	<p><label for="sexo">Sexo</label>
+    <input type="text" th:field="*{sexo}" id="sexo"></p>
+
+	<p><label for="provincia">Provincia</label>
+    <input type="text" th:field="*{provincia}" id="provincia"></p>
+
+	<p><label for="canton">Cantón</label>
+    <input type="text" th:field="*{canton}" id="canton"></p>
+    
+    <p><label for="distrito">Distrito</label>
+    <input type="text" th:field="*{distrito}" id="distrito"></p>
+    
+    <p><label for="telefono">Teléfono</label>
+    <input type="text" th:field="*{telefono}" id="telefono"></p>
+    
+    <p><label for="correo">Correo</label>
+    <input type="text" th:field="*{correo}" id="correo"></p>
+       
+    
+    <input type="submit" value="Add Atleta">
+    <a th:href="@{/}">Volver al Inicio</a>
+     
+</form>
+
+</body>
+</html>

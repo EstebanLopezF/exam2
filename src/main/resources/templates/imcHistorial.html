@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Historial de IMC</title>
+</head>
+<body>
+	<div>
+		<h1>Historial de IMC</h1>
+		<ul>
+			<label>Fecha de Toma | IMC</label>
+			<div th:each="entry : ${imclist}"> 
+				<li>
+					<h4>
+						<span th:text="${entry.getFechaToma()}">fechaToma</span>
+						<label> | </label>
+						<span th:text="${entry.getIindice()}">indice</span> 
+					</h4>
+				</li>
+			</div>
+		</ul>
+	</div>
+	<a th:href="@{/}">Volver al Inicio</a>
+</body>
+</html>
