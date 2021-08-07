@@ -6,39 +6,60 @@
 </head>
 <body>
 	<div>
-		<h1>Detalle de Atleta</h1>
-		<p><label >Cédula: </label>
-		<span th:text="${atleta.getId()}">id</span></p>
-		<p><label >Nombre: </label>
-		<span th:text="${atleta.getNombre()}">nombre</span></p>
-		<p><label >Apellido1: </label>
-		<span th:text="${atleta.getApellidos1()}">apellidos1</span></p>
-		<p><label >Apellido2: </label>
-		<span th:text="${atleta.getApellidos2()}">apellidos2</span></p>
-		<p><label >Fecha de Nacimiento: </label>
-		<span th:text="${atleta.getFechaNacimiento()}">fechaNacimiento</span></p>
-		<p><label >Deporte: </label>
-		<span th:text="${atleta.getDeporte()}">deporte</span></p>
-		<p><label >Estatura: </label>
-		<span th:text="${atleta.getEstatura()}">estatura</span></p>
-		<p><label >Peso: </label>
-		<span th:text="${atleta.getPeso()}">peso</span></p>
-		<p><label >Sexo: </label>
-		<span th:text="${atleta.getSexo()}">sexo</span></p>
-		<p><label >Provincia: </label>
-		<span th:text="${atleta.getProvincia()}">provincia</span></p>
-		<p><label >Canton: </label>
-		<span th:text="${atleta.getCanton()}">canton</span></p>
-		<p><label >Distrito: </label>
-		<span th:text="${atleta.getDistrito()}">distrito</span></p>
-		<p><label >Teléfono: </label>
-		<span th:text="${atleta.getTelefono()}">telefono</span></p>
-		<p><label >Correo: </label>
-		<span th:text="${atleta.getCorreo()}">correo</span></p>
-		
-	</div>
 	
+		<form action="#" th:action="@{/update}" th:object="${atleta}" method="put">
+	
+		<h1>Detalle de Atleta</h1>
+
+		<p><label for="id">Cédula</label>
+   		<input value="${atleta.getId()}" type="text" th:field="*{id}" id="id" disabled></p>
+
+ 		<p><label for="name">Nombre</label>
+    	<input value="${atleta.getNombre()}" type="text" th:field="*{nombre}" id="name" disabled></p>
+    
+    	<p><label for="apellidos1">Apellido1</label>
+    	<input value="${atleta.getApellidos1()}" type="text" th:field="*{apellidos1}" id="apellidos1" disabled></p>
+    
+    	<p><label for="apellidos2">Apellido2</label>
+    	<input value="${atleta.getApellidos2()}" type="text" th:field="*{apellidos2}" id="apellidos2" disabled></p>
+    
+    	<p><label for="fechaNacimiento">Fecha de Nacimiento</label>
+    	<input value="${atleta.getFechaNacimiento()}" type="text" th:field="*{fechaNacimiento}" id="fechaNacimiento" disabled></p>
+    	
+    	<p><label for="deporte">Deporte</label>
+    	<input value="${atleta.getDeporte()}" type="text" th:field="*{deporte}" id="deporte" disabled></p>
+    
+    	<p><label for="estatura">Estatura</label>
+    	<input value="${atleta.getEstatura()}" type="text" th:field="*{estatura}" id="estatura" disabled></p>
+    
+   		<p><label for="Peso">Peso</label>
+    	<input value="${atleta.getPeso()}" type="text" th:field="*{Peso}" id="Peso"></p>
+    
+		<p><label for="sexo">Sexo</label>
+    	<input value="${atleta.getSexo()}" type="text" th:field="*{sexo}" id="sexo" disabled></p>
+
+		<p><label for="provincia">Provincia</label>
+    	<input value=${atleta.getProvincia()} type="text" th:field="*{provincia}" id="provincia"></p>
+		
+		<p><label for="provincia">Canton</label>
+    	<input value=${atleta.getCanton()} type="text" th:field="*{canton}" id="canton"></p>
+		
+		<p><label for="distrito">Distrito</label>
+    	<input value=${atleta.getDistrito()} type="text" th:field="*{distrito}" id="distrito"></p>
+
+		<p><label for="telefono">Teléfono</label>
+    	<input value=${atleta.getTelefono()} type="text" th:field="*{telefono}" id="telefono"></p>
+
+		<p><label for="correo">Correo</label>
+    	<input value=${atleta.getCorreo()} type="text" th:field="*{correo}" id="correo"></p>
+
+		<input type="submit" value="Actualizar Atleta">
+    	</form>
+    	
+	</div>
+		<p></p>
 		<a th:href="@{/imcHistorial/{id}(id= ${atleta.getId()})}">Ver Historial IMC</a>
+		<p></p>
 		<a th:href="@{/}">Volver al Inicio</a>
 		
 	

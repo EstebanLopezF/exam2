@@ -5,14 +5,11 @@ import com.cenfotec.app.domain.IMC;
 import com.cenfotec.app.services.AtletaService;
 import com.cenfotec.app.services.ImcService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @Controller
 public class AtletaController {
@@ -53,24 +50,27 @@ public class AtletaController {
         return "index";
     }
     
-
-	@GetMapping("/search/{name}")
-    public ResponseEntity<List<Atleta>> getList(@PathVariable("name") String name){
-        List<Atleta> atletas = atletaService.getSearch(name);
-        return new ResponseEntity(atletas, HttpStatus.OK);
+    @RequestMapping("/search/{name}")
+    public String search(Model model, @PathVariable("name") String name) {
+    	model.addAttribute("search", atletaService.getSearch(name));
+    	return "listar";
     }
     
-	
-	
-	
-    @PutMapping("/update")
-    public ResponseEntity<?> update(@RequestBody Atleta atleta){
+    
+    
+    
+    @RequestMapping(value = "/update",  method = RequestMethod.GET)
+    public String updatePage(Model model) {
+        model.addAttribute(new Atleta());
+        return "detalleAtleta";
+    }
+    
+    @RequestMapping( value="/update", method = RequestMethod.PUT)
+    public String update(Atleta atleta, BindingResult result, Model model) {
     	atletaService.updateProcedure(atleta);
-        return new ResponseEntity("atleta actualizado", HttpStatus.OK);
+    	return "listar";
     }
     
-    
-
 }
 
 
